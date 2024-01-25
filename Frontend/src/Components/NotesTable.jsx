@@ -5,7 +5,7 @@ import { MdDelete } from "react-icons/md";
 const NotesTable = () => {
   return (
     <div>
-      <table className='w-full border-separate border-spacing-4 p-4 mt-8'>
+      <table className='w-full border-separate border-spacing-4 p-4 mt-4'>
         <thead>
           <tr>
             <th className="border-purple-600 text-xl border-2 rounded-md p-2">S.No</th>
@@ -17,7 +17,7 @@ const NotesTable = () => {
         </thead>
         <tbody>
           <tr>
-            <td className='text-center border-purple-600 border-2 rounded-md p-2'>1</td>
+            <td className='text-center border-purple-600 border-2 rounded-md p-2 '>1</td>
             <td className='border-purple-600 border-2 rounded-md p-2'>ReactJS</td>
             <td className='max-md:hidden border-purple-600 border-2 rounded-md p-2'>Ongoing</td>
             <td className='max-md:hidden border-purple-600 border-2 rounded-md p-2'>13/02/2023</td>
@@ -49,8 +49,8 @@ const NotesTable = () => {
             <td className='max-md:hidden border-purple-600 border-2 rounded-md p-2'>21/01/2024</td>
             <td className=' border-purple-600 border-2 rounded-md p-2'>Postman simplifies API testing, automation, and collaboration with an intuitive interface and powerful features. Postman is a popular collaboration platform for API development, providing tools for designing, testing, and monitoring APIs. It simplifies the development process by allowing users to create and share API documentation, automate testing, and streamline collaboration among team members, ensuring efficient and error-free API workflows.</td>
             <td className='flex items-center justify-around p-2 '>
-              <FaEdit className='cursor-pointer text-3xl ' />
-              <MdDelete className='cursor-pointer text-3xl ' />
+              <FaEdit className='cursor-pointer text-3xl '/>
+              <MdDelete className='cursor-pointer text-3xl '/>
             </td>
           </tr>
         </tbody>
