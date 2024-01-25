@@ -10,7 +10,7 @@ const NotesTable = () => {
           <tr>
             <th className="border-purple-600 border-2 rounded-md p-2">S.No</th>
             <th className="border-purple-600 border-2 rounded-md p-2">Topic</th>
-            <th className="border-purple-600 border-2 rounded-md p-2">Status</th>
+            <th className="border-purple-600 border-2 rounded-md p-2 max-md:hidden">Status</th>
             <th className="border-purple-600 border-2 rounded-md p-2">Date</th>
             <th className="border-purple-600 border-2 rounded-md p-2">Notes</th>
             <th className="border-purple-600 border-2 rounded-md p-2">Actions</th>
@@ -20,7 +20,7 @@ const NotesTable = () => {
           <tr>
             <td className='text-center'>1</td>
             <td>ReactJS</td>
-            <td>Ongoing</td>
+            <td className='max-md:hidden'>Ongoing</td>
             <td>13/02/2023</td>
             <td>ReactJS simplifies UI development with reusable components, virtual DOM, and efficient state management in JavaScript.</td>
             <td className='cursor-pointer'><FaEdit /></td>
@@ -34,7 +34,7 @@ const NotesTable = () => {
           <tr>
             <td className='text-center'>2</td>
             <td>JavaScript</td>
-            <td>Ongoing</td>
+            <td className='max-md:hidden'>Ongoing</td>
             <td>14/08/2023</td>
             <td>JavaScript powers web interactivity, making pages dynamic with client-side scripting for enhanced user experiences.</td>
             <td><FaEdit /></td>
@@ -45,7 +45,7 @@ const NotesTable = () => {
           <tr>
             <td className='text-center'>3</td>
             <td>Postman API</td>
-            <td>Completed</td>
+            <td className='max-md:hidden'>Completed</td>
             <td>21/01/2024</td>
             <td>Postman simplifies API testing, automation, and collaboration with an intuitive interface and powerful features.</td>
             <td><FaEdit /></td>
