@@ -22,9 +22,9 @@ const Heading = () => {
         <FaSquarePlus className='mt-6 text-5xl float-right relative right-8 cursor-pointer hover:shadow-outline' />
       </Link>
       {tableNotes ?
-        <NotesCard notes={notes} />
+        <NotesTable/>
         :
-        <NotesTable />
+        <NotesCard />
       }
     </div>
   )

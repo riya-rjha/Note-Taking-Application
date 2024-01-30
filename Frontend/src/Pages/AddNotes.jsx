@@ -1,60 +1,74 @@
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
-import { IoChevronBackCircle } from "react-icons/io5";
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { IoChevronBackCircle } from 'react-icons/io5';
+import Spinner from '../Components/Spinner.jsx';
+import '../index.css'
 
 const AddNotes = () => {
-
   const [topic, setTopic] = useState('');
   const [status, setStatus] = useState('');
   const [notes, setNotes] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
-  // const URL = 'http://localhost:5555/notes';
-  // const addNotes = async () => {
-  //   setIsLoading(true);
-  //   try {
-  //     const data = { topic, status, notes };
-  //     const response = await axios.post(URL, data);
-  //     setIsLoading(false);
-  //   } catch (error) {
-  //     console.log(error.message);
-  //     setIsLoading(false);
-  //   }
-  // }
-
-  // addNotes();
-
   return (
-
-    <div>
-      <div>
+    <div className=''>
+      <div className='absolute left-8 top-11'>
         <Link to='/'>
           <IoChevronBackCircle className='-mt-6 text-5xl float-left cursor-pointer hover:shadow-outline' />
         </Link>
       </div>
-      <div className="text-center flex items-center justify-center flex-col mt-20 p-9">
-        <div className='mt-6'>
-          <label className='text-3xl font-bold' htmlFor="Topic">Topic</label>
-          <div>
-            <input type="text" id='Topic' className='border-black w-[416px] mt-6 border-2 outline-none p-2 overflow-hidden' />
+      {isLoading ? (
+        <Spinner />
+      ) : (
+        <div className='flex-wrap flex m-10 min-[500px]'>
+            <div className='image w-full flex justify-center items-center flex-col flex-wrap mt-10 border-2 p-8 rounded-md min-w-fit'>
+            <div className='mt-6'>
+              <label className='text-3xl font-bold float-left' htmlFor='Topic'>
+                Topic :
+              </label>
+              <div>
+                <input
+                  type='text'
+                  id='Topic'
+                  className='border-black w-[416px] mt-6 border-2 outline-none p-2 rounded-md focus:ring focus:border-purple-800'
+                  placeholder='Enter topic'
+                />
+              </div>
+            </div>
+            <div className='mt-6'>
+              <label className='text-3xl font-bold float-left' htmlFor='Status'>
+                Status :{' '}
+              </label>
+              <div>
+                <input
+                  type='text'
+                  id='Status'
+                  className='border-black w-[416px] mt-6 border-2 outline-none p-2 rounded-md focus:ring focus:border-purple-800'
+                  placeholder='Enter status'
+                />
+              </div>
+            </div>
+            <div className='mt-6'>
+              <label className='text-3xl font-bold float-left' htmlFor='Notes'>
+                Notes :
+              </label>
+              <div>
+                <textarea
+                  type='text'
+                  id='Notes'
+                  className='border-black w-[416px] mt-6 border-2 outline-none p-2 rounded-md h-[105px] focus:ring focus:border-purple-800'
+                  placeholder='Enter notes'
+                />
+              </div>
+            </div>
+            <button className='p-2 border-2 border-purple-900 text-2xl m-2 rounded-md font-bold text-green-950 transition duration-100 hover:bg-violet-300 hover:text-black delay-75 w-[416px]'>
+              Submit
+            </button>
           </div>
         </div>
-        <div className='mt-6'>
-          <label className='text-3xl font-bold' htmlFor="Status">Status</label>
-          <div>
-            <input type="text" id='Status' className='border-black w-[416px] mt-6 border-2 outline-none p-2 overflow-hidden' />
-          </div>
-        </div>
-        <div className='mt-6'>
-          <label className='text-3xl font-bold' htmlFor="Notes">Notes</label>
-          <div>
-            <input type="text" id='Notes' className='border-black w-[416px] mt-6 border-2 outline-none p-2 overflow-hidden' />
-          </div>
-        </div>
-      </div>
-
+      )}
     </div>
-  )
-}
+  );
+};
 
-export default AddNotes
+export default AddNotes;
