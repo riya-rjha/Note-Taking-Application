@@ -1,14 +1,28 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { IoChevronBackCircle } from 'react-icons/io5';
 import Spinner from '../Components/Spinner.jsx';
-import '../index.css'
+import '../index.css';
+import axios from 'axios';
 
 const AddNotes = () => {
   const [topic, setTopic] = useState('');
   const [status, setStatus] = useState('');
   const [notes, setNotes] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate('');
+
+  const data = { topic, status, notes };
+  const handleSubmit = async () => {
+    try {
+      await axios.post('http://localhost:5555/notes', data);
+      setIsLoading(false);
+      navigate('/');
+    } catch (error) {
+      console.log(error.message);
+      console.log(error.response);
+    }
+  }
 
   return (
     <div className=''>
@@ -21,7 +35,7 @@ const AddNotes = () => {
         <Spinner />
       ) : (
         <div className='flex-wrap flex m-10 min-[500px]'>
-            <div className='image w-full flex justify-center items-center flex-col flex-wrap mt-10 border-2 p-8 rounded-md min-w-fit'>
+          <div className='image w-full flex justify-center items-center flex-col flex-wrap mt-10 border-2 p-8 rounded-md min-w-fit'>
             <div className='mt-6'>
               <label className='text-3xl font-bold float-left' htmlFor='Topic'>
                 Topic :
@@ -32,6 +46,8 @@ const AddNotes = () => {
                   id='Topic'
                   className='border-black w-[416px] mt-6 border-2 outline-none p-2 rounded-md focus:ring focus:border-purple-800'
                   placeholder='Enter topic'
+                  value={topic}
+                  onChange={(e) => setTopic(e.target.value)}
                 />
               </div>
             </div>
@@ -45,6 +61,8 @@ const AddNotes = () => {
                   id='Status'
                   className='border-black w-[416px] mt-6 border-2 outline-none p-2 rounded-md focus:ring focus:border-purple-800'
                   placeholder='Enter status'
+                  value={status}
+                  onChange={(e) => setStatus(e.target.value)}
                 />
               </div>
             </div>
@@ -58,10 +76,14 @@ const AddNotes = () => {
                   id='Notes'
                   className='border-black w-[416px] mt-6 border-2 outline-none p-2 rounded-md h-[105px] focus:ring focus:border-purple-800'
                   placeholder='Enter notes'
+                  value={notes}
+                  onChange={(e) => setNotes(e.target.value)}
                 />
               </div>
             </div>
-            <button className='p-2 border-2 border-purple-900 text-2xl m-2 rounded-md font-bold text-green-950 transition duration-100 hover:bg-violet-300 hover:text-black delay-75 w-[416px]'>
+            <button className='p-2 border-2 border-purple-900 text-2xl m-2 rounded-md font-bold text-green-950 transition duration-100 hover:bg-violet-300 hover:text-black delay-75 w-[416px]'
+              onClick={handleSubmit}
+            >
               Submit
             </button>
           </div>

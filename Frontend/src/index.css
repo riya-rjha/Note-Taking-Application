@@ -9,7 +9,8 @@
 
 .image{
   background: url('../Images/addnotes.avif');
-  background-repeat: round;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 @tailwind base;
