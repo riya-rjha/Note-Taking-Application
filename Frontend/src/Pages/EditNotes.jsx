@@ -24,10 +24,10 @@ const EditNotes = () => {
       try {
         setIsLoading(true);
         const response = await axios.get(URL);
-        console.log(response.data.data);
-        setTopic(response.data.data.topic);
-        setStatus(response.data.data.status);
-        setNotes(response.data.data.notes);
+        // console.log(response.data);
+        setTopic(response.data.topic);
+        setStatus(response.data.status);
+        setNotes(response.data.notes);
         setIsLoading(false);
       } catch (error) {
         console.log(error.message);
@@ -42,7 +42,7 @@ const EditNotes = () => {
   const handleEdit = async () => {
     try {
       setIsLoading(true);
-      await axios.put(API_URl, data);
+      await axios.put(URL, data);
       setIsLoading(false);
       navigate('/');
     } catch (error) {

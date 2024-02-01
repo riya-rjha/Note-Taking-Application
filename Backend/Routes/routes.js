@@ -73,7 +73,7 @@ router.put('/:id', async (req, res) => {
 router.delete('/:id', async (req, res) => {
     try {
         const { id } = req.params;
-        const result = await Notes.findByIdAndDelete(id, req.body);
+        const result = await Notes.findByIdAndDelete(id);
         if (!result) {
             return res.send(400).json({ message: 'Note could not be deleted!' });
         }

@@ -53,10 +53,10 @@ const NotesTable = () => {
                   </p>
                 </td>
                 <td className='flex items-center justify-around p-2'>
-                  <Link to='/notes/edit/:id'>
+                  <Link to={`/notes/edit/${item._id}`}>
                     <FaEdit className='cursor-pointer text-3xl ' />
                   </Link>
-                  <Link to='/notes/delete/:id'>
+                  <Link to={`/notes/delete/${item._id}`}>
                     <MdDelete className='cursor-pointer text-3xl ' />
                   </Link>
                 </td>

@@ -11,6 +11,7 @@ const DeleteNotes = () => {
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
   const { id } = useParams();
+  // console.log(id);
 
   const handleDelete = async () => {
     setIsLoading(true);
