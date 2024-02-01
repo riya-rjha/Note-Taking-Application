@@ -7,13 +7,16 @@
   font-family: 'Poppins', sans-serif;
 }
 
-.image{
+.image {
   background: url('../Images/addnotes.avif');
   background-repeat: no-repeat;
   background-size: cover;
 }
 
+.submitBTN {
+  width: -webkit-fill-available;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
