@@ -22,7 +22,7 @@ router.post('/', async (req, resp) => {
     }
 });
 
-//Routes to get a note
+//Routes to get notes
 
 router.get('/', async (req, resp) => {
     try {
@@ -37,7 +37,20 @@ router.get('/', async (req, resp) => {
     }
 });
 
-//Routes to get update a note
+//Route to get one note
+router.get('/:id', async (req, res) => {
+    try {
+        const { id } = req.params;//fetch data from database
+        const note = await Notes.findById(id);
+        return res.status(201).json(note);
+
+    } catch (error) {
+        console.log(`Error message : ${error.message}`);
+        return res.status(500).send({ message: error.message });
+    }
+});
+
+//Routes to update a note
 router.put('/:id', async (req, res) => {
     try {
         if (!req.body.topic || !req.body.status || !req.body.notes) {

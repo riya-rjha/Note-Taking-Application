@@ -25,7 +25,7 @@ const AddNotes = () => {
   }
 
   return (
-    <div className=''>
+    <div>
       <div className='absolute left-8 top-11'>
         <Link to='/'>
           <IoChevronBackCircle className='-mt-6 text-5xl float-left cursor-pointer hover:shadow-outline' />
@@ -59,7 +59,7 @@ const AddNotes = () => {
                 <input
                   type='text'
                   id='Status'
-                  className='border-black w-[416px] mt-6 border-2 outline-none p-2 rounded-md focus:ring focus:border-purple-800'
+                  className='border-black w-[416px] mt-6 border-2 p-2 rounded-md focus:ring focus:border-purple-800 outline-none'
                   placeholder='Enter status'
                   value={status}
                   onChange={(e) => setStatus(e.target.value)}
