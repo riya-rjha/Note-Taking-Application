@@ -35,7 +35,7 @@ const AddNotes = () => {
         <Spinner />
       ) : (
         <div className='flex-wrap flex m-10 min-[500px]'>
-          <div className='image w-full flex justify-center items-center flex-col flex-wrap mt-10 border-2 p-8 rounded-md min-w-fit'>
+          <div className="bg-green-100 flex min-w-[460px] items-center justify-center p-10 flex-col w-[450px] m-auto mt-20 mb-20 rounded-md">
             <div className='mt-6'>
               <label className='text-3xl font-bold float-left' htmlFor='Topic'>
                 Topic :
@@ -74,7 +74,7 @@ const AddNotes = () => {
                 <textarea
                   type='text'
                   id='Notes'
-                  className='border-black w-[416px] mt-6 border-2 outline-none p-2 rounded-md h-[105px] focus:ring focus:border-purple-800'
+                  className='border-black w-[416px] mt-6 border-2 outline-none p-2 rounded-md h-[105px] focus:ring focus:border-purple-800 '
                   placeholder='Enter notes'
                   value={notes}
                   onChange={(e) => setNotes(e.target.value)}

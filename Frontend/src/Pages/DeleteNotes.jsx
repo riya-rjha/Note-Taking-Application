@@ -36,7 +36,7 @@ const DeleteNotes = () => {
               <IoChevronBackCircle className='-mt-6 text-5xl float-left cursor-pointer hover:shadow-outline' />
             </Link>
           </div>
-          <div className="md:w-[50%] lg:w-[40%] border-purple-500 border-4 rounded-md mt-20 p-8">
+          <div className="md:w-[50%] lg:w-[40%] p-8">
             <p className="text-3xl text-center font-bold mb-6">
               Do you really want to delete the note you created? Rethink and then click the button below!
             </p>

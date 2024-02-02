@@ -48,7 +48,7 @@ const NotesTable = () => {
                 <td className='max-md:hidden outline-none border-purple-600 border-2 rounded-md p-2'>{item.status}</td>
                 <td className='max-md:hidden border-purple-600 border-2 rounded-md p-2'>{new Date(item.createdAt).toString()}</td>
                 <td>
-                  <p className='border-purple-600 border-2 outline-none rounded-md p-2'>
+                  <p className='border-purple-600 min-h-[116px] border-2 outline-none rounded-md p-2'>
                     {item.notes}
                   </p>
                 </td>
