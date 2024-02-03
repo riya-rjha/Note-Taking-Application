@@ -16,7 +16,7 @@ const DeleteNotes = () => {
   const handleDelete = async () => {
     setIsLoading(true);
     try {
-      await axios.delete(`http://localhost:5555/notes/${id}`);
+      await axios.delete(`https://notes-tracker.onrender.com/notes/${id}`);
       setIsLoading(false);
       navigate('/');
     } catch (error) {

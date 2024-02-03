@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 const NotesTable = () => {
   const [notes, setNotes] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const URL = `http://localhost:5555/notes`;
+  const URL = `https://notes-tracker.onrender.com/notes`;
 
   const fetchNotes = async () => {
     try {

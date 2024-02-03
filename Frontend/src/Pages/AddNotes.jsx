@@ -15,7 +15,7 @@ const AddNotes = () => {
   const data = { topic, status, notes };
   const handleSubmit = async () => {
     try {
-      await axios.post('http://localhost:5555/notes', data);
+      await axios.post('https://notes-tracker.onrender.com/notes', data);
       setIsLoading(false);
       navigate('/');
     } catch (error) {

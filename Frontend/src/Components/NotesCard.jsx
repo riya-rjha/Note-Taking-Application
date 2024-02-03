@@ -16,7 +16,7 @@ const NotesCard = () => {
   const [notesModal, setNotesModal] = useState(false);
   const [datesModal, setDatesModal] = useState(false);
 
-  const API_URL = 'http://localhost:5555/notes';
+  const API_URL = 'https://notes-tracker.onrender.com/notes';
 
   const getNotes = async () => {
     setIsLoading(true);
