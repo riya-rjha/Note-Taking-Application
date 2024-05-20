@@ -5,6 +5,7 @@ import axios from 'axios';
 import Spinner from '../Components/Spinner';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+
 import { IoChevronBackCircle } from 'react-icons/io5';
 
 const DeleteNotes = () => {
