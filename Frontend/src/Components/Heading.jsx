@@ -11,7 +11,7 @@ const Heading = () => {
   return (
     <div>
       <h2 className="font-bold text-2xl max-md:ml-28 max-md:w-[300px] text-center pt-4">
-        Note Taking Application
+        Author Page
       </h2>
       <div className="max-md:ml-[385px] flex items-center justify-center max-sm:ml-[100px]">
         <div className="flex items-center justify-center pt-8 gap-4">
