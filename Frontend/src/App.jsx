@@ -1,3 +1,4 @@
+// App.jsx
 import React from 'react';
 import Heading from './Components/Heading';
 import AddNotes from './Pages/AddNotes.jsx';
