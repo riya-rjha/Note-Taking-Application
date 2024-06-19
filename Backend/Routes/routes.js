@@ -1,5 +1,5 @@
 import express from "express";
-import {Blogs} from '../Blogs Model/model.js'
+import {Blogs} from '../Model/blogs.js'
 const router = express.Router();
 
 //Routes to save a new Blog

@@ -1,15 +1,17 @@
 import { Router } from "express";
 import { compare } from "bcrypt";
-import { sign } from "jsonwebtoken";
-import User, { findOne } from "../models/User";
+import {Blogs} from "../Model/blogs.js";
 import "dotenv/config";
 
 const router = Router();
 
+import pkg from 'jsonwebtoken';
+const { sign } = pkg;
+
 router.post("/register", async (req, res) => {
   try {
     const { username, password } = req.body;
-    const user = new User({ username, password });
+    const user = new Blogs({ username, password });
     await user.save();
     res.status(201).send({ message: "User registered successfully" });
   } catch (err) {

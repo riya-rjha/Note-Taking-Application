@@ -18,8 +18,8 @@ app.get('/', (request, response) => {
     return response.status(202).send('Welcome to my Blog Making Application');
 });
 
-app.use('/Blogs', BlogsRoute);
-app.use('/api/auth', authRoutes);
+app.use('/', BlogsRoute);
+app.use('/register', authRoutes);
 
 //Connecting to a Database (MongoDB)
 const connectToDatabase = async () => {

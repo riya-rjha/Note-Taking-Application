@@ -8,7 +8,7 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("/api/auth/register", {
+      const response = await axios.post("/register", {
         username,
         password,
       });

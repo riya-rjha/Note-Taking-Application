@@ -1,13 +1,14 @@
 import { Router } from "express";
 import { compare } from "bcrypt";
 import { sign } from "jsonwebtoken";
-import User, { findOne } from "../models/User";
+import { userModel } from "../Model/user.js"; // Ensure consistent import
+
 const router = Router();
 
 router.post("/register", async (req, res) => {
   try {
     const { username, password } = req.body;
-    const user = new User({ username, password });
+    const user = new userModel({ username, password }); // Use userModel for new user creation
     await user.save();
     res.status(201).send({ message: "User registered successfully" });
   } catch (err) {
@@ -18,7 +19,7 @@ router.post("/register", async (req, res) => {
 router.post("/login", async (req, res) => {
   try {
     const { username, password } = req.body;
-    const user = await findOne({ username });
+    const user = await userModel.findOne({ username }); // Use userModel for querying
     if (!user || !(await compare(password, user.password))) {
       throw new Error("Invalid username or password");
     }
