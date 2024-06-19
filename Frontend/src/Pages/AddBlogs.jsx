@@ -5,14 +5,14 @@ import Spinner from '../Components/Spinner.jsx';
 import '../index.css';
 import axios from 'axios';
 
-const AddNotes = () => {
+const AddBlogs = () => {
   const [topic, setTopic] = useState('');
   const [status, setStatus] = useState('');
-  const [notes, setNotes] = useState('');
+  const [Blogs, setBlogs] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate('');
 
-  const data = { topic, status, notes };
+  const data = { topic, status, Blogs };
   const handleSubmit = async () => {
     try {
       await axios.post('https://notes-tracker.onrender.com/notes', data);
@@ -67,17 +67,17 @@ const AddNotes = () => {
               </div>
             </div>
             <div className='mt-6'>
-              <label className='text-3xl font-bold float-left' htmlFor='Notes'>
-                Notes :
+              <label className='text-3xl font-bold float-left' htmlFor='Blogs'>
+                Blogs :
               </label>
               <div>
                 <textarea
                   type='text'
-                  id='Notes'
+                  id='Blogs'
                   className='border-black w-[416px] mt-6 border-2 outline-none p-2 rounded-md h-[105px] focus:ring focus:border-purple-800 '
-                  placeholder='Enter notes'
-                  value={notes}
-                  onChange={(e) => setNotes(e.target.value)}
+                  placeholder='Enter Blogs'
+                  value={Blogs}
+                  onChange={(e) => setBlogs(e.target.value)}
                 />
               </div>
             </div>
@@ -93,4 +93,4 @@ const AddNotes = () => {
   );
 };
 
-export default AddNotes;
+export default AddBlogs;

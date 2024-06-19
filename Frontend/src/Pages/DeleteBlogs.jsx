@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 
 import { IoChevronBackCircle } from 'react-icons/io5';
 
-const DeleteNotes = () => {
+const DeleteBlogs = () => {
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
   const { id } = useParams();
@@ -39,7 +39,7 @@ const DeleteNotes = () => {
           </div>
           <div className="md:w-[50%] lg:w-[40%] p-8">
             <p className="text-3xl text-center font-bold mb-6">
-              Do you really want to delete the note you created? Rethink and then click the button below!
+              Do you really want to delete the Blog you created? Rethink and then click the button below!
             </p>
             <button
               type="submit"
@@ -55,4 +55,4 @@ const DeleteNotes = () => {
   );
 };
 
-export default DeleteNotes;
+export default DeleteBlogs;

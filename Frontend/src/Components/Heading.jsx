@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import NotesCard from '../Components/NotesCard';
+import React from 'react';
+import BlogsCard from '../Components/BlogsCard';
 import { Link } from 'react-router-dom';
 import { FaSquarePlus } from 'react-icons/fa6';
 
@@ -17,11 +17,11 @@ const Heading = () => {
         </div>
       </div>
       <div className="max-md:float-right pr-12 float-right mt-6">
-        <Link to="/notes/create">
+        <Link to="/Blogs/create">
           <FaSquarePlus className="text-5xl cursor-pointer hover:shadow-outline" />
         </Link>
       </div>
-       <NotesCard />
+       <BlogsCard />
     </div>
   );
 };

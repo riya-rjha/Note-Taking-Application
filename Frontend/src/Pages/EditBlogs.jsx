@@ -5,17 +5,17 @@ import Spinner from '../Components/Spinner.jsx';
 import { Link } from 'react-router-dom';
 import { IoChevronBackCircle } from 'react-icons/io5';
 
-const EditNotes = () => {
+const EditBlogs = () => {
 
   const [topic, setTopic] = useState('');
   const [status, setStatus] = useState('');
-  const [notes, setNotes] = useState('');
+  const [Blogs, setBlogs] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
   const navigate = useNavigate();
   const { id } = useParams();
   const URL = `https://notes-tracker.onrender.com/notes/${id}`;
-  const data = { topic, status, notes };
+  const data = { topic, status, Blogs };
 
   //Get book of specific Id
 
@@ -27,7 +27,7 @@ const EditNotes = () => {
         // console.log(response.data);
         setTopic(response.data.topic);
         setStatus(response.data.status);
-        setNotes(response.data.notes);
+        setBlogs(response.data.Blogs);
         setIsLoading(false);
       } catch (error) {
         console.log(error.message);
@@ -62,7 +62,7 @@ const EditNotes = () => {
       ) : (
         <div className="bg-green-100 flex min-w-[460px] items-center justify-center p-10 flex-col w-[450px] m-auto mt-20 mb-20 rounded-md">
           <div className="text-left text-2xl bold">
-            Edit Notes
+            Edit Blogs
           </div>
           <input type="text"
             className='border-black w-[416px] mt-6 border-2 outline-none p-2 rounded-md focus:ring focus:border-purple-800 '
@@ -75,8 +75,8 @@ const EditNotes = () => {
           <textarea
             type='text'
             className='border-black w-[416px] mt-6 border-2 outline-none p-2 rounded-md h-[105px] focus:ring focus:border-purple-800 resize-none'
-            value={notes}
-            onChange={(e) => setNotes(e.target.value)}
+            value={Blogs}
+            onChange={(e) => setBlogs(e.target.value)}
           />
           <button className='p-2 border-2 border-purple-900 text-2xl m-2 rounded-md font-bold text-green-950 transition duration-100 hover:bg-violet-300 hover:text-black delay-75 w-[416px] mt-6'
             onClick={handleEdit}
@@ -90,4 +90,4 @@ const EditNotes = () => {
   )
 }
 
-export default EditNotes
+export default EditBlogs

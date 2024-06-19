@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 const { Schema } = mongoose;
 
-const noteSchema = new Schema(
+const BlogSchema = new Schema(
     {
         topic: {
             type: String,
@@ -11,7 +11,7 @@ const noteSchema = new Schema(
             type: String,
             required: true,
         },
-        notes: {
+        Blogs: {
             type: String,
             required: true
         }
@@ -21,4 +21,4 @@ const noteSchema = new Schema(
     }
 );
 
-export const Notes = mongoose.model('Cat',noteSchema);
+export const Blogs = mongoose.model('Cat',BlogSchema);
