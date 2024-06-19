@@ -15,7 +15,7 @@ const BlogsModal = ({ onClose, Blog }) => {
         <p className='text-2xl font-bold mt-6' >Status : <span className='text-purple-900'>{Blog.status}</span></p>
         <p className='flex justify-center'>
           <FaBook className='mr-[11px] -mt-[38px] text-yellow-500 text-[200px]' />
-          <span className="text-xl mt-10">{Blog.Blogs}</span>
+          <span className="text-xl mt-10">{Blog.notes}</span>
         </p>
       </div>
 

@@ -6,14 +6,15 @@ import { MdEdit, MdDelete } from 'react-icons/md';
 import { CiCalendarDate } from 'react-icons/ci';
 import Spinner from './Spinner';
 import DatesModal from '../Modals/DatesModal';
-import Searchbar from './Searchbar';
+import Searchbar from './Searchbar.jsx';
+import BlogsModal from '../Modals/BlogsModal';
 
 const BlogsCard = () => {
   const [Blogs, setBlogs] = useState([]);
   const [filteredBlogs, setFilteredBlogs] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(null);
-  const [BlogsModal, setBlogsModal] = useState(false);
+  const [blogsModal, setBlogsModal] = useState(false);
   const [datesModal, setDatesModal] = useState(false);
 
   const API_URL = 'https://notes-tracker.onrender.com/notes';
@@ -40,7 +41,7 @@ const BlogsCard = () => {
     const filtered = Blogs.filter(Blog =>
       keywordArray.some(keyword => 
         Blog.topic.toLowerCase().includes(keyword) || 
-        Blog.Blogs.toLowerCase().includes(keyword)
+        Blog.notes.toLowerCase().includes(keyword)
       )
     );
     setFilteredBlogs(filtered);
@@ -90,7 +91,7 @@ const BlogsCard = () => {
                   </Link>
                   <CiCalendarDate className='text-yellow-500 text-5xl cursor-pointer' onClick={() => openDatesModal(index)} />
                 </div>
-                {BlogsModal && selectedIndex === index && (
+                {blogsModal && selectedIndex === index && (
                   <BlogsModal
                     onClose={closeBlogsModal}
                     Blog={Blog}
