@@ -1,21 +1,26 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { Link, useNavigate } from "react-router-dom";
 
 const Register = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("https://notes-tracker.onrender.com/register", {
-        username,
-        password,
-      });
+      const response = await axios.post(
+        "https://notes-tracker.onrender.com/register",
+        {
+          username,
+          password,
+        }
+      );
       console.log(response.data);
-      alert(response.data.message);
+      navigate("/");
     } catch (error) {
-      alert(error.response.data.error);
+      console.log(error.response.data.error);
     }
   };
 
