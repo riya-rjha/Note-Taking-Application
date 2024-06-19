@@ -8,10 +8,11 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("/register", {
+      const response = await axios.post("https://notes-tracker.onrender.com/register", {
         username,
         password,
       });
+      console.log(response.data);
       alert(response.data.message);
     } catch (error) {
       alert(error.response.data.error);

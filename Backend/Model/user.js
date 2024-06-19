@@ -1,8 +1,7 @@
 import mongoose from "mongoose";
-import { Schema } from "mongoose";
-import bcrypt from "bcrypt"; // Add this import
+import bcrypt from "bcrypt";
 
-const userSchema = new Schema({
+const userSchema = new mongoose.Schema({
   username: {
     type: String,
     required: true,
@@ -21,4 +20,4 @@ userSchema.pre("save", async function (next) {
   next();
 });
 
-export const userModel = mongoose.model("User", userSchema); // Change the model name to singular "User"
+export const userModel = mongoose.model("User", userSchema); // Singular "User"
