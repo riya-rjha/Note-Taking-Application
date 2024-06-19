@@ -5,7 +5,6 @@ import { FaNoteSticky } from 'react-icons/fa6';
 import { MdEdit, MdDelete } from 'react-icons/md';
 import { CiCalendarDate } from 'react-icons/ci';
 import Spinner from './Spinner';
-import BlogsModal from '../Modals/BlogsModal';
 import DatesModal from '../Modals/DatesModal';
 import Searchbar from './Searchbar';
 

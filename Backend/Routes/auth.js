@@ -2,6 +2,8 @@ import { Router } from "express";
 import { compare } from "bcrypt";
 import { sign } from "jsonwebtoken";
 import User, { findOne } from "../models/User";
+import "dotenv/config";
+
 const router = Router();
 
 router.post("/register", async (req, res) => {
@@ -22,7 +24,7 @@ router.post("/login", async (req, res) => {
     if (!user || !(await compare(password, user.password))) {
       throw new Error("Invalid username or password");
     }
-    const token = sign({ userId: user._id }, "your_jwt_secret");
+    const token = sign({ userId: user._id }, process.env.JWT_secret);
     res.send({ token });
   } catch (err) {
     res.status(400).send({ error: err.message });
