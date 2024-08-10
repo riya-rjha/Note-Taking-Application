@@ -4,7 +4,6 @@ import { mongoose } from 'mongoose';
 import express from "express";
 import BlogsRoute from './Routes/routes.js'
 import cors from 'cors'
-import authRoutes from './Routes/auth.js'
 const app = express();
 
 app.use(cors());
@@ -19,7 +18,6 @@ app.get('/', (request, response) => {
 });
 
 app.use('/', BlogsRoute);
-app.use('/register', authRoutes);
 
 //Connecting to a Database (MongoDB)
 const connectToDatabase = async () => {
