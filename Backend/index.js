@@ -2,9 +2,9 @@
 import 'dotenv/config'
 import { mongoose } from 'mongoose';
 import express from "express";
-import NotesRoute from './Routes/routes.js'
+import BlogsRoute from './Routes/routes.js'
 import cors from 'cors'
-
+import authRoutes from './Routes/auth.js'
 const app = express();
 
 app.use(cors());
@@ -15,10 +15,11 @@ app.use(express.json());
 
 app.get('/', (request, response) => {
     console.log(request);
-    return response.status(202).send('Welcome to my Note Making Application');
+    return response.status(202).send('Welcome to my Blog Making Application');
 });
 
-app.use('/notes', NotesRoute)
+app.use('/', BlogsRoute);
+app.use('/register', authRoutes);
 
 //Connecting to a Database (MongoDB)
 const connectToDatabase = async () => {
