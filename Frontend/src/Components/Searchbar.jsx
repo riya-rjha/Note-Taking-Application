@@ -24,7 +24,7 @@ const Searchbar = ({ onSearch }) => {
         value={keywords}
         onChange={handleInputChange}
         onKeyDown={handleKeyDown}
-        placeholder="Enter keywords to search for your desired blog"
+        placeholder="Enter keywords to search for your desired Note"
         className="border-2 border-purple-400 text-gray-800 outline-none p-3 rounded-lg w-full sm:w-auto flex-1 sm:mr-2"
       />
       <button

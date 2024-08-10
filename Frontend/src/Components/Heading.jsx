@@ -1,5 +1,5 @@
 import React from "react";
-import BlogsCard from "../Components/BlogsCard";
+import NotesCard from "../Components/NotesCard";
 import { Link } from "react-router-dom";
 import { FaSquarePlus } from "react-icons/fa6";
 
@@ -11,7 +11,7 @@ const Heading = () => {
       </h2>
       <div className="flex flex-wrap justify-center gap-6 mb-8">
         <Link
-          to="/Blogs/create"
+          to="/Notes/create"
           className="group relative inline-flex items-center"
         >
           <FaSquarePlus className="text-5xl text-purple-600 hover:text-purple-800 transition-colors duration-300 ease-in-out" />
@@ -19,7 +19,7 @@ const Heading = () => {
         </Link>
       </div>
       <div className="w-full max-w-4xl">
-        <BlogsCard />
+        <NotesCard />
       </div>
     </div>
   );

@@ -1,35 +1,35 @@
 import express from "express";
-import {Blogs} from '../Model/blogs.js'
+import {Notes} from '../Model/Notes.js'
 const router = express.Router();
 
-//Routes to save a new Blog
+//Routes to save a new Note
 
 router.post('/', async (req, resp) => {
     try {
-        if (!req.body.topic || !req.body.status || !req.body.Blogs) {
+        if (!req.body.topic || !req.body.status || !req.body.Notes) {
             return resp.status(400).send({ message: "Enter all details!" });
         }
-        const BlogsVariable = {
+        const NotesVariable = {
             topic: req.body.topic,
             status: req.body.status,
-            Blogs: req.body.Blogs
+            Notes: req.body.Notes
         };
-        const Blogs = await Blogs.create(BlogsVariable);
-        return resp.status(201).send(Blogs);
+        const Notes = await Notes.create(NotesVariable);
+        return resp.status(201).send(Notes);
     } catch (error) {
         console.log(error.message);
         return resp.status(500).send({ message: error.message });
     }
 });
 
-//Routes to get Blogs
+//Routes to get Notes
 
 router.get('/', async (req, resp) => {
     try {
-        const Blogs = await Blogs.find({});
+        const Notes = await Notes.find({});
         return resp.status(200).json({
-            count: Blogs.length,
-            data: Blogs
+            count: Notes.length,
+            data: Notes
         });
     } catch (error) {
         console.log(error.message);
@@ -37,12 +37,12 @@ router.get('/', async (req, resp) => {
     }
 });
 
-//Route to get one Blog
+//Route to get one Note
 router.get('/:id', async (req, res) => {
     try {
         const { id } = req.params;//fetch data from database
-        const Blog = await Blogs.findById(id);
-        return res.status(201).json(Blog);
+        const Note = await Notes.findById(id);
+        return res.status(201).json(Note);
 
     } catch (error) {
         console.log(`Error message : ${error.message}`);
@@ -50,18 +50,18 @@ router.get('/:id', async (req, res) => {
     }
 });
 
-//Routes to update a Blog
+//Routes to update a Note
 router.put('/:id', async (req, res) => {
     try {
-        if (!req.body.topic || !req.body.status || !req.body.Blogs) {
+        if (!req.body.topic || !req.body.status || !req.body.Notes) {
             return res.status(500).send({ message: 'Send all the required details!' });
         }
         const { id } = req.params;
-        const result = await Blogs.findByIdAndUpdate(id, req.body);
+        const result = await Notes.findByIdAndUpdate(id, req.body);
         if (!result) {
-            return res.status(500).json({ message: 'Blogs not found!' })
+            return res.status(500).json({ message: 'Notes not found!' })
         }
-        return res.status(200).send({ message: 'Blogs updated successfully' });
+        return res.status(200).send({ message: 'Notes updated successfully' });
     }
     catch (err) {
         console.log(`Error message : ${err.message}`);
@@ -69,15 +69,15 @@ router.put('/:id', async (req, res) => {
     }
 });
 
-//Deleting a Blog
+//Deleting a Note
 router.delete('/:id', async (req, res) => {
     try {
         const { id } = req.params;
-        const result = await Blogs.findByIdAndDelete(id);
+        const result = await Notes.findByIdAndDelete(id);
         if (!result) {
-            return res.send(400).json({ message: 'Blog could not be deleted!' });
+            return res.send(400).json({ message: 'Note could not be deleted!' });
         }
-        return res.status(200).send({ message: 'Blog deleted successfully!' });
+        return res.status(200).send({ message: 'Note deleted successfully!' });
     } catch (error) {
         console.log(error.message);
         return res.status(404).send({ message: error.message });
