@@ -2,26 +2,25 @@ import React from "react";
 import BlogsCard from "../Components/BlogsCard";
 import { Link } from "react-router-dom";
 import { FaSquarePlus } from "react-icons/fa6";
-import { MdAccountCircle } from "react-icons/md";
 
 const Heading = () => {
   return (
-    <div>
-      <h2 className="font-bold text-2xl max-md:ml-28 max-md:w-[300px] text-center pt-4">
-        Blog Application
+    <div className="flex flex-col items-center p-6 sm:p-8 md:p-10 lg:p-16 bg-purple-50 min-h-screen">
+      <h2 className="text-4xl font-extrabold text-purple-800 mb-6 text-center">
+        NoteTracker
       </h2>
-      <div className="max-md:ml-[385px] flex items-center justify-center max-sm:ml-[100px]">
-        <div className="flex items-center justify-center pt-8 gap-4"></div>
-      </div>
-      <div className="max-md:float-right pr-12 float-right mt-6">
-        <Link to="/Blogs/create">
-          <FaSquarePlus className="text-5xl cursor-pointer hover:shadow-outline" />
-        </Link>
-        <Link to="/register">
-          <MdAccountCircle className="text-5xl cursor-pointer hover:shadow-outline"/>
+      <div className="flex flex-wrap justify-center gap-6 mb-8">
+        <Link
+          to="/Blogs/create"
+          className="group relative inline-flex items-center"
+        >
+          <FaSquarePlus className="text-5xl text-purple-600 hover:text-purple-800 transition-colors duration-300 ease-in-out" />
+         
         </Link>
       </div>
-      <BlogsCard />
+      <div className="w-full max-w-4xl">
+        <BlogsCard />
+      </div>
     </div>
   );
 };
