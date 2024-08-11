@@ -21,4 +21,4 @@ const NoteSchema = new Schema(
     }
 );
 
-export const Notes = mongoose.model('cats',NoteSchema);
+export const Notes = mongoose.model('notes',NoteSchema);

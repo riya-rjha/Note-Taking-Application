@@ -1,6 +1,5 @@
 import express from "express";
 import { Notes } from '../Model/notes.js'
-import mongoose from 'mongoose';
 
 const router = express.Router();
 

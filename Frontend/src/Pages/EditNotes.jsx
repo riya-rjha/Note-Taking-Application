@@ -13,7 +13,7 @@ const EditNotes = () => {
 
   const navigate = useNavigate();
   const { id } = useParams();
-  const URL = `https://notes-tracker.onrender.com/notes/${id}`;
+  const URL = `http://localhost:5555/notes/${id}`;
   const data = { topic, status, Notes };
 
   useEffect(() => {

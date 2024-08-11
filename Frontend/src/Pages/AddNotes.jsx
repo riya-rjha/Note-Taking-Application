@@ -8,16 +8,16 @@ import axios from 'axios';
 const AddNotes = () => {
   const [topic, setTopic] = useState('');
   const [status, setStatus] = useState('');
-  const [Notes, setNotes] = useState('');
+  const [notes, setNotes] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
 
-  const data = { topic, status, Notes };
+  const data = { topic, status, notes };
 
   const handleSubmit = async () => {
     setIsLoading(true);
     try {
-      await axios.post('https://notes-tracker.onrender.com/notes/', data);
+      await axios.post('http://localhost:5555/notes/', data);
       setIsLoading(false);
       navigate('/');
     } catch (error) {
@@ -75,7 +75,7 @@ const AddNotes = () => {
               id='Notes'
               className='w-full resize-none p-3 border border-purple-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500'
               placeholder='Enter Notes'
-              value={Notes}
+              value={notes}
               onChange={(e) => setNotes(e.target.value)}
             />
           </div>
