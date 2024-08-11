@@ -17,12 +17,10 @@ const NotesCard = () => {
   const [isNotesModalOpen, setIsNotesModalOpen] = useState(false);
   const [datesModal, setDatesModal] = useState(false);
 
-  const API_URL = "http://localhost:5555/notes/";
-
   const getNotes = async () => {
     setIsLoading(true);
     try {
-      const response = await axios.get(API_URL);
+      const response = await axios.get(`${import.meta.env.VITE_baseURL}/notes/`);
       console.log("RESPONE: " + response.data.data);
       setNotes(response.data.data);
       setFilteredNotes(response.data.data);

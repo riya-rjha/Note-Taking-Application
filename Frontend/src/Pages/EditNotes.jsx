@@ -8,13 +8,13 @@ import { IoChevronBackCircle } from 'react-icons/io5';
 const EditNotes = () => {
   const [topic, setTopic] = useState('');
   const [status, setStatus] = useState('');
-  const [Notes, setNotes] = useState('');
+  const [notes, setNotes] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
   const navigate = useNavigate();
   const { id } = useParams();
-  const URL = `http://localhost:5555/notes/${id}`;
-  const data = { topic, status, Notes };
+  const URL = `${import.meta.env.VITE_baseURL}/notes/${id}`;
+  const data = { topic, status, notes };
 
   useEffect(() => {
     const fetchDetails = async () => {
@@ -91,7 +91,7 @@ const EditNotes = () => {
             <textarea
               id='Notes'
               className='w-full h-[150px] p-3 border border-purple-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 resize-none'
-              value={Notes}
+              value={notes}
               onChange={(e) => setNotes(e.target.value)}
             />
           </div>
