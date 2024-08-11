@@ -17,12 +17,13 @@ const NotesCard = () => {
   const [NotesModal, setNotesModal] = useState(false);
   const [datesModal, setDatesModal] = useState(false);
 
-  const API_URL = "https://notes-tracker.onrender.com/notes";
+  const API_URL = "http://localhost:5555/notes";
 
   const getNotes = async () => {
     setIsLoading(true);
     try {
       const response = await axios.get(API_URL);
+      console.log("RRSPONE: " + response);
       setNotes(response.data.data);
       setFilteredNotes(response.data.data); // Initialize with all Notes
     } catch (error) {

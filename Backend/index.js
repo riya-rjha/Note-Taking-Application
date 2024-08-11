@@ -4,6 +4,7 @@ import { mongoose } from 'mongoose';
 import express from "express";
 import NotesRoute from './Routes/routes.js'
 import cors from 'cors'
+
 const app = express();
 
 app.use(cors());
@@ -17,7 +18,7 @@ app.get('/', (request, response) => {
     return response.status(202).send('Welcome to my Note Making Application');
 });
 
-app.use('/', NotesRoute);
+app.use('/notes', NotesRoute);
 
 //Connecting to a Database (MongoDB)
 const connectToDatabase = async () => {

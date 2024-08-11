@@ -11,7 +11,7 @@ const NoteSchema = new Schema(
             type: String,
             required: true,
         },
-        Notes: {
+        notes: {
             type: String,
             required: true
         }
@@ -21,4 +21,4 @@ const NoteSchema = new Schema(
     }
 );
 
-export const Notes = mongoose.model('Note',NoteSchema);
+export const Notes = mongoose.model('cats',NoteSchema);

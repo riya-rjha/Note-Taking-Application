@@ -4,7 +4,6 @@ import Heading from './Components/Heading';
 import AddNotes from './Pages/AddNotes.jsx';
 import DeleteNotes from './Pages/DeleteNotes.jsx';
 import EditNotes from './Pages/EditNotes.jsx';
-import Register from './Pages/Register.jsx';
 import { Route, Routes } from 'react-router-dom';
 
 const App = () => {
@@ -14,7 +13,6 @@ const App = () => {
       <Route path='/Notes/create' element={<AddNotes />} />
       <Route path='/Notes/delete/:id' element={<DeleteNotes />} />
       <Route path='/Notes/edit/:id' element={<EditNotes />} />
-      <Route path='/register' element={<Register/>}/>
     </Routes>
   )
 }

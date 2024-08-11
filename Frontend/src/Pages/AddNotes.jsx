@@ -17,7 +17,7 @@ const AddNotes = () => {
   const handleSubmit = async () => {
     setIsLoading(true);
     try {
-      await axios.post('https://notes-tracker.onrender.com/notes', data);
+      await axios.post('https://notes-tracker.onrender.com/notes/', data);
       setIsLoading(false);
       navigate('/');
     } catch (error) {
