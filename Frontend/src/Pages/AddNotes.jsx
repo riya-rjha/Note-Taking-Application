@@ -17,7 +17,7 @@ const AddNotes = () => {
   const handleSubmit = async () => {
     setIsLoading(true);
     try {
-      await axios.post('http://localhost:5555/notes/', data);
+      await axios.post(`${import.meta.env.VITE_baseURL}/notes/`, data);
       setIsLoading(false);
       navigate('/');
     } catch (error) {
